@@ -2,7 +2,6 @@
 const date = new Date();
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-// 
 const renderCalendar = () => {
     date.setDate(1);
 
