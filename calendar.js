@@ -1,7 +1,8 @@
+// variablen - const indeholder: måneder, år samt dage
 const date = new Date();
 const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
-
+// 
 const renderCalendar = () => {
     date.setDate(1);
 
@@ -44,10 +45,13 @@ const renderCalendar = () => {
         "December",
     ];
 
+    // Defineringen af månede 
     document.querySelector(".date h1").innerHTML = months[date.getMonth()];
 
+    // Defineringen af dato
     document.querySelector(".date p").innerHTML = new Date().toLocaleDateString('dk-DK', dateOptions); //toDateString();
 
+    // Loops for dage før månedens startdag, hvilken datostart på hvilken dag og næste månedes startdag der vises i kalenderen
     let days = "";
 
     for (let x = firstDayIndex; x > 0; x--) {
@@ -71,11 +75,13 @@ const renderCalendar = () => {
     }
 };
 
+// Gå tilbage forrig månede
 document.querySelector(".prev").addEventListener("click", () => {
     date.setMonth(date.getMonth() - 1);
     renderCalendar();
 });
 
+// Gå frem til næste månede
 document.querySelector(".next").addEventListener("click", () => {
     date.setMonth(date.getMonth() + 1);
     renderCalendar();
