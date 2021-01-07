@@ -1,4 +1,6 @@
 const date = new Date();
+const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
 
 const renderCalendar = () => {
     date.setDate(1);
@@ -44,7 +46,7 @@ const renderCalendar = () => {
 
     document.querySelector(".date h1").innerHTML = months[date.getMonth()];
 
-    document.querySelector(".date p").innerHTML = new Date().toDateString();
+    document.querySelector(".date p").innerHTML = new Date().toLocaleDateString('dk-DK', dateOptions); //toDateString();
 
     let days = "";
 
